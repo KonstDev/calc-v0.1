@@ -3,6 +3,17 @@
 
 using namespace std;
 
+int binpow (int a, int n) {
+	int res = 1;
+	while (n) {
+		if (n & 1)
+			res *= a;
+		a *= a;
+		n >>= 1;
+	}
+	return res;
+}
+
 int main()
 {
 //    cout << "Hello world!" << endl;
@@ -58,10 +69,7 @@ int main()
             cout << "Введите число и показатель степени" << endl;
             int an, na;
             cin >> an >> na;
-            unsigned long long ass = 1;
-            for (int i = 1; i <= na; i++)
-                ass*=an;
-            cout << "Результат возведения в степень - " <<  ass << endl;
+            cout << "Результат возведения в степень - " <<  binpow (an, na) << endl;
     }
     if (type == 6)
     {//квыдратный корень
