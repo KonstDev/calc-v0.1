@@ -1,0 +1,167 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+//    cout << "Hello world!" << endl;
+    setlocale(LC_ALL, "Russian");
+    int type = 0;
+    cout << "Выберите номер арифметического действия:"<< endl;
+    cout << "1 - Cложение" << endl << "2 - вычитание" << endl << "3 - умножение" << endl << "4 - деление" << endl << "5 - возведение числа в степень n" << endl << "6 - квадратный корень" << endl << "7 - решение квадратного уравнения" << endl << "8 - решение биквадратичного уравнения";
+    cin >> type;
+    if (type == 1)
+    {//сложение
+        cout << "Сколько чисел вы хотите cложить?" << endl;
+        int countt = 0, sum = 0;
+        cin >> countt;
+        for (int i = 0; i < countt; i++)
+        {
+            int x = 0;
+            cin >> x;
+            sum += x;
+        }
+        cout << "Результат сложения - " << sum << endl;
+    }
+    if (type == 2)
+    {//вычитание
+        cout << "Введите два числа" << endl;
+        int x1 = 0, x2 = 0;
+        cin >> x1 >> x2;
+
+        cout << "Результат вычитания - " << x1 - x2 << endl;
+    }
+      if (type == 3)
+    {//умножение
+        cout << "Сколько чисел вы хотите перемножить?" << endl;
+        int countt = 0, proizv = 1;
+        cin >> countt;
+        for (int i = 0; i < countt; i++)
+        {
+            int x = 0;
+            cin >> x;
+            proizv *= x;
+        }
+        cout << "Результат умножения - " << proizv << endl;
+    }
+     if (type == 4)
+    {//деление
+        cout << "Введите два числа" << endl;
+        int x1 = 0, x2 = 0;
+        cin >> x1 >> x2;
+        double aaqqw = x1/x2;
+        cout << "Результат деления - " << aaqqw << endl;
+    }
+    if (type == 5)
+    {//возведение числа a в степень н
+            cout << "Введите число и показатель степени" << endl;
+            int an, na;
+            cin >> an >> na;
+            unsigned long long ass = 1;
+            for (int i = 1; i <= na; i++)
+                ass*=an;
+            cout << "Результат возведения в степень - " <<  ass << endl;
+    }
+    if (type == 6)
+    {//квыдратный корень
+        cout << "Введите число"<< endl;
+        int x;
+        cin >> x;
+        cout << sqrt(x);
+    }
+    if (type == 7)
+    { //квадратные укравнения
+    cout << "Представьте ваше уравнение в виде ax^2 + bx + c" << endl;
+    cout << "Введите а" << endl;
+    int a;
+    cin >> a;
+    cout << "Введите b" << endl;
+    int b;
+    cin >>b;
+    cout << "Введите c"<<endl;
+    int c;
+    cin >> c;
+    long long D = 0;
+    D = b * b - (4 * (a * c));
+    cout << "D = " << D << endl;
+    double x1 = 0, x2 = 0;
+    if (D < 0)
+        cout << "Нет корней" << endl;
+
+    else if (D == 0)
+    {
+       // double x1 = 0;
+        x1 = (-b + sqrt(D)) / (2*a);
+        cout << "x = " << x1;
+    }
+    else if (D > 0)
+    {
+
+        x1 = (-b + sqrt(D)) / (2*a);
+        x2 = (-b - sqrt(D)) / (2*a);
+        ///if (x1 > 0)
+       //{
+            cout << "x1 = " ;
+            cout << x1 << endl;
+       //    }
+
+       //if (x2 > 0)
+        //{
+            cout << "x2 = ";
+            cout << x2 << endl;
+        //}
+      //  else cout << "x2 не удовлетворяет условию";
+    }
+    }
+    if (type == 8)
+    { //биквадратные укравнения
+    cout << "Представьте ваше уравнение в виде ax^4 + bx^2 + c" << endl;
+    cout << "Введите а" << endl;
+    int a;
+    cin >> a;
+    cout << "Введите b" << endl;
+    int b;
+    cin >>b;
+    cout << "Введите c"<<endl;
+    int c;
+    cin >> c;
+    long long D = 0;
+    D = b * b - (4 * (a * c));
+    cout << "D = " << D << endl;
+    double x1 = 0, x2 = 0;
+    if (D < 0)
+        cout << "Нет корней" << endl;
+
+    else if (D == 0)
+    {
+       // double x1 = 0;
+        x1 = (-b + sqrt(D)) / (2*a);
+        cout << "x = " << x1;
+    }
+    else if (D > 0)
+    {
+
+        x1 = (-b + sqrt(D)) / (2*a);
+        x2 = (-b - sqrt(D)) / (2*a);
+        if (x1 > 0)
+       {
+            cout << "x1 = ";
+            double h = sqrt(x1);
+            if (fmod(h,1) == 0)
+                cout << sqrt(x1)<< endl;
+                else cout << "sqrt("<<x1<< ")" << endl;
+        }
+
+        if (x2 > 0)
+        {
+            cout << "x2 = ";
+            if (fmod(sqrt(x2),1)  == 0)
+                cout << sqrt(x2)<< endl;
+            else cout << "sqrt ("<<x2 << ")"<< endl;
+        }
+      //  else cout << "x2 не удовлетворяет условию";
+    }
+    }
+    return 0;
+}
